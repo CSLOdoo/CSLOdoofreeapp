@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_pricelist_item_tree_inherit" model="ir.ui.view">
+            <field name="name">product.pricelist.item.tree.inherit</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="inherit_id" ref="product.product_pricelist_item_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_end']" position="after">
+                    <field name="product_id" invisible="1"/>
+                    <field name="product_tmpl_id"/>
+                    <field name="categ_id"/>
+                    <field name="compute_price"/>
+                    <field name="fixed_price"/>
+                    <field name="percent_price"/>
+                    <field name="base"/>
+                    <field name="base_pricelist_id"/>
+                    <field name="price_round"/>
+                    <field name="price_discount"/>
+                    <field name="price_min_margin"/>
+                    <field name="price_max_margin"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sales_pricelist_line_action" model="ir.actions.act_window">
+            <field name="name">Pricelist Lines</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.pricelist.item</field>
+            <field name="view_mode">tree,search</field>
+            <field name="search_view_id" ref="product.product_pricelist_item_tree_view"/>
+        </record>
+
+        <menuitem id="menu_sales_pricelist_line"
+                  name="Pricelist Lines"
+                  action="sales_pricelist_line_action"
+                  groups="group_pricelist_access"
+                  parent="sale.product_menu_catalog"
+        />
+    </data>
+</odoo>
