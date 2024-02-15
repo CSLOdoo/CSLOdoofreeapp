@@ -21,6 +21,7 @@
         "security/ir.model.access.csv",
         "view/db_backup_view.xml",
     ],
+    'images': ['static/description/banner.png'],
     "installable": True,
     "external_dependencies": {"python": ["pysftp"]},
 }
