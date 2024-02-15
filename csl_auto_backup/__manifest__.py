@@ -11,7 +11,7 @@
     "summary": "Backups database",
     "version": "17.0.0.0.0",
     "author": "Cloud Science Labs",
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "website": "https://www.cloudsciencelabs.com/",
     "category": "Tools",
     "depends": ["mail"],
